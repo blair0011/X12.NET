@@ -21,7 +21,7 @@
             QueryMap = new Dictionary<string, IDictionary<string, string>>();
             ExpectedValuesMap = new Dictionary<string, IDictionary<string, string>>();
 
-            Stream stream = X12.Tests.Unit.Extensions.GetEdi(SampleFilesIndex);
+            Stream stream = Extensions.GetEdi(SampleFilesIndex);
             using (XmlReader reader = XmlReader.Create(stream, new XmlReaderSettings()))
             {
                 var document = new XPathDocument(reader);

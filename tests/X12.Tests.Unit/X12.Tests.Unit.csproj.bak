@@ -1,44 +1,102 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\..\packages\NUnit.3.10.1\build\NUnit.props" Condition="Exists('..\..\packages\NUnit.3.10.1\build\NUnit.props')" />
   <PropertyGroup>
-    <ProductVersion />
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <LangVersion>7.3</LangVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE09ACD3-898F-467D-BA43-3FDF181A51AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>X12.Tests.Unit</RootNamespace>
+    <AssemblyName>X12.Tests.Unit</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <AssemblyTitle>X12.Tests.Unit</AssemblyTitle>
-    <Company>Hewlett-Packard</Company>
-    <Product>X12.Tests.Unit</Product>
-    <Copyright>Copyright © Hewlett-Packard 2010</Copyright>
-    <AssemblyVersion>3.0.10.0</AssemblyVersion>
-    <FileVersion>3.0.10.0</FileVersion>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NUnit" Version="3.10.1" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
-    <PackageReference Include="System.Xml.XDocument" Version="4.3.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
-  </ItemGroup>
-  <ItemGroup>
+    <Reference Include="Fonet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=52effa152c4a9dc6, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Fonet.1.0\lib\net20\Fonet.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\X12.Parsing\X12.Parsing.csproj" />
-    <ProjectReference Include="..\..\src\X12.Shared\X12.Shared.csproj" />
-    <ProjectReference Include="..\..\src\X12.Specifications\X12.Specifications.csproj" />
-    <ProjectReference Include="..\..\src\X12.Transformations\X12.Transformations.csproj" />
-    <ProjectReference Include="C:\Users\blair\Source\Repos\FO.NET\src\Core\Fonet.csproj" />
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Creation\InstitutionalClaimCreationTester.cs" />
+    <Compile Include="Creation\Invoice810CreationTester.cs" />
+    <Compile Include="Creation\ProfessionalClaimCreationTester.cs" />
+    <Compile Include="Creation\PurchaseOrderCreationTester.cs" />
+    <Compile Include="DocumentationCodeSamples\X12InterchangeModel\ReadingAnExistingX12File.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="ExtensionsTests\EnumExtensionsTests.cs" />
+    <Compile Include="Flattening\Flatten820Tester.cs" />
+    <Compile Include="Flattening\Flatten837Tester.cs" />
+    <Compile Include="Parsing\BinaryParsingTester.cs" />
+    <Compile Include="Parsing\ParsingTester.cs" />
+    <Compile Include="Parsing\ResourcePathManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unbundling\UnbundlingTester.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\X12.Parsing\X12.Parsing.csproj">
+      <Project>{29eeaa38-bfb2-4732-a286-eb91355f9bcd}</Project>
+      <Name>X12.Parsing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\X12.Shared\X12.Shared.csproj">
+      <Project>{74a34062-7cf9-41b5-9f36-a0367c9afa2f}</Project>
+      <Name>X12.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\X12.Specifications\X12.Specifications.csproj">
+      <Project>{26e9a9d5-d0b4-4b86-83d7-a0a3370a57ea}</Project>
+      <Name>X12.Specifications</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\X12.Transformations\X12.Transformations.csproj">
+      <Project>{c080e31b-1f81-4f6e-b634-90d834b1811d}</Project>
+      <Name>X12.Transformations</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Parsing\_SampleEdiFiles\MISC\_102\Example.txt" />
@@ -199,6 +257,12 @@
     <EmbeddedResource Include="Parsing\_SampleEdiFiles\ORD\_856\Example2.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Rendering\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="Parsing\_SampleEdiFiles\INS\_835\_4010\FromNth\835_DeIdent_01.dat" />
     <EmbeddedResource Include="Parsing\_SampleEdiFiles\INS\_835\_4010\FromNth\835_DeIdent_02.dat" />
     <EmbeddedResource Include="Parsing\_SampleEdiFiles\INS\_837P\_4010\FromNth\837_DeIdent_01.dat" />
@@ -208,6 +272,21 @@
     <EmbeddedResource Include="Parsing\_SampleEdiFiles\INS\_837P\_4010\FromNth\837_DeIdent_05.dat" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\NUnit.3.10.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NUnit.3.10.1\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

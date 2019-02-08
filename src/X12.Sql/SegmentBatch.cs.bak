@@ -174,11 +174,12 @@
 
                         if (elementSpec.Type == ElementDataType.Numeric && elementSpec.ImpliedDecimalPlaces > 0)
                         {
+                            int intVal;
                             if (string.IsNullOrWhiteSpace(val))
                             {
                                 row[column] = null;
                             }
-                            else if (int.TryParse(val, out int intVal))
+                            else if (int.TryParse(val, out intVal))
                             {
                                 var denominator = (decimal)Math.Pow(10, elementSpec.ImpliedDecimalPlaces);
                                 row[column] = intVal / denominator;
@@ -201,11 +202,12 @@
                         }
                         else if (elementSpec.Type == ElementDataType.Numeric || elementSpec.Type == ElementDataType.Decimal)
                         {
+                            decimal decVal;
                             if (string.IsNullOrWhiteSpace(val))
                             {
                                 row[column] = null;
                             }
-                            else if (decimal.TryParse(val, out decimal decVal))
+                            else if (decimal.TryParse(val, out decVal))
                             {
                                 row[column] = decVal;
                             }
@@ -232,10 +234,11 @@
                             }
                             else
                             {
+                                DateTime date;
                                 if (val.Length == 8 &&
                                     DateTime.TryParse(
                                         $"{val.Substring(0, 4)}-{val.Substring(4, 2)}-{val.Substring(6, 2)}",
-                                        out DateTime date))
+                                        out date))
                                 {
                                     row[column] = date;
                                 }
