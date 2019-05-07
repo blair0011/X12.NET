@@ -38,7 +38,7 @@
     <ProjectReference Include="..\..\src\X12.Shared\X12.Shared.csproj" />
     <ProjectReference Include="..\..\src\X12.Specifications\X12.Specifications.csproj" />
     <ProjectReference Include="..\..\src\X12.Transformations\X12.Transformations.csproj" />
-    <ProjectReference Include="C:\Users\blair\Source\Repos\FO.NET\src\Core\Fonet.csproj" />
+    <ProjectReference Include="..\..\..\FO.NET\src\Core\Fonet.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Parsing\_SampleEdiFiles\MISC\_102\Example.txt" />

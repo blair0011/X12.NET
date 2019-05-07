@@ -219,3 +219,6 @@ paket-files/
 
 # MSBuild Binary and Structured Log
 *.binlog
+/src/X12.X12Parser/U0810172.258.xml
+/src/X12.X12Parser/U1110181.305.xml
+/src/data

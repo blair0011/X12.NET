@@ -33,7 +33,7 @@
     <ProjectReference Include="..\..\src\X12.Hipaa\X12.Hipaa.csproj" />
     <ProjectReference Include="..\..\src\X12.Parsing\X12.Parsing.csproj" />
     <ProjectReference Include="..\..\src\X12.Shared\X12.Shared.csproj" />
-    <ProjectReference Include="C:\Users\blair\Source\Repos\FO.NET\src\Core\Fonet.csproj" />
+    <ProjectReference Include="..\..\..\FO.NET\src\Core\Fonet.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Claims\TestData\UB04ClaimModel1.xml" />

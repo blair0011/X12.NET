@@ -54,7 +54,7 @@
     <ProjectReference Include="..\X12.Parsing\X12.Parsing.csproj" />
     <ProjectReference Include="..\X12.Shared\X12.Shared.csproj" />
     <ProjectReference Include="..\X12.Specifications\X12.Specifications.csproj" />
-    <ProjectReference Include="C:\Users\blair\Source\Repos\FO.NET\src\Core\Fonet.csproj" />
+    <ProjectReference Include="..\..\..\FO.NET\src\Core\Fonet.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
