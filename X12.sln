@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X12.X12Parser", "src\X12.X12Parser\X12.X12Parser.csproj", "{19307F16-3D8C-4E4D-8903-8BAD12EDAE78}"
 EndProject
@@ -9,9 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.travis.yml = .travis.yml
 		deploy.sh = deploy.sh
-		Local.testsettings = Local.testsettings
 		README.md = README.md
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X12.Tests.Unit", "tests\X12.Tests.Unit\X12.Tests.Unit.csproj", "{CE09ACD3-898F-467D-BA43-3FDF181A51AE}"
@@ -51,6 +49,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X12.Transformations", "src\X12.Transformations\X12.Transformations.csproj", "{C080E31B-1F81-4F6E-B634-90D834B1811D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fonet", "C:\Users\blair\Source\Repos\FO.NET\src\Core\Fonet.csproj", "{AD3D5B1D-AB55-422D-881B-E65C77ACF19C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "load837_5010Data", "load837_5010Data\load837_5010Data.csproj", "{034942F6-E814-4149-A4B1-C12207570ABC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{1A4D3A92-F6FB-40C8-890A-6E094B264674}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -264,6 +266,30 @@ Global
 		{AD3D5B1D-AB55-422D-881B-E65C77ACF19C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{AD3D5B1D-AB55-422D-881B-E65C77ACF19C}.Release|x86.ActiveCfg = Release|Any CPU
 		{AD3D5B1D-AB55-422D-881B-E65C77ACF19C}.Release|x86.Build.0 = Release|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Debug|x86.Build.0 = Debug|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Release|x86.ActiveCfg = Release|Any CPU
+		{034942F6-E814-4149-A4B1-C12207570ABC}.Release|x86.Build.0 = Release|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Debug|x86.Build.0 = Debug|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Release|x86.ActiveCfg = Release|Any CPU
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -284,8 +310,8 @@ Global
 		{8E4B7C5F-87EE-43CB-A1DE-75ECB5916B19} = {FC1769FD-76F2-40B7-9FA3-AC3E2F24D8B2}
 		{74A34062-7CF9-41B5-9F36-A0367C9AFA2F} = {FC1769FD-76F2-40B7-9FA3-AC3E2F24D8B2}
 		{29EEAA38-BFB2-4732-A286-EB91355F9BCD} = {FC1769FD-76F2-40B7-9FA3-AC3E2F24D8B2}
-		{26E9A9D5-D0B4-4B86-83D7-A0A3370A57EA} = {FC1769FD-76F2-40B7-9FA3-AC3E2F24D8B2}
 		{C080E31B-1F81-4F6E-B634-90D834B1811D} = {FC1769FD-76F2-40B7-9FA3-AC3E2F24D8B2}
+		{1A4D3A92-F6FB-40C8-890A-6E094B264674} = {54C5B25A-2D9B-4189-8DFA-CFF39BFACE09}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82406A0F-880D-4913-8252-9A64EC0C4A3B}

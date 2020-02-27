@@ -9,11 +9,14 @@
     [TestFixture, Ignore("Database tests have issues with authentication, SetUp, and TearDown")]
     public class GetTransactionSegmentsTester
     {
+        private const string conn = @"Server=(localdb)\MSSQLLocalDB;Integrated Security=true";
+        //"Data Source=(local);Initial Catalog=X12;Integrated Security=True"
+
         [Test]
         public void ReadTransactions()
         {
             // arrange
-            var repo = new SqlTransactionRepository("Data Source=(local);Initial Catalog=X12;Integrated Security=True", "Test", typeof(long));
+            var repo = new SqlTransactionRepository(conn, "Test", typeof(long));
 
             // act
             var list = repo.GetTransactionSets(new RepoTransactionSetSearchCriteria

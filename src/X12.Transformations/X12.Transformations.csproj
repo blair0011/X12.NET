@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <LangVersion>7.3</LangVersion>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>8.0</LangVersion>
     <AssemblyTitle>X12.Transformations</AssemblyTitle>
     <Company>Bradley Van Fleet</Company>
     <Product>X12.Transformations</Product>
@@ -29,10 +29,6 @@
     <DebugType>pdbonly</DebugType>
     <OutputPath>lib\</OutputPath>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Net.Http" />
-  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\X12-XML-to-HTML.xslt" />
   </ItemGroup>

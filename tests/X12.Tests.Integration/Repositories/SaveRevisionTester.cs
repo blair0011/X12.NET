@@ -9,12 +9,13 @@
     using X12.Specifications.Finders;
     using X12.Sql;
 
-    [TestFixture]
+    [TestFixture, Ignore("Database tests have issues with authentication, SetUp, and TearDown")]
     public class SaveRevisionTester
     {
-        private static readonly string Dsn = "Data Source=localhost;Initial Catalog=Test;Integrated Security=True";
+        private static readonly string Dsn = @"Server=(localdb)\MSSQLLocalDB;Integrated Security=true";
+        //"Data Source=localhost;Initial Catalog=Test;Integrated Security=True";
 
-        [Test, Ignore("Database tests have issues with authentication, SetUp, and TearDown")]
+        [Test]
         public void SaveRevisionTest()
         {
             var repo = new SqlTransactionRepository(
@@ -42,7 +43,7 @@
             Assert.IsTrue(revId > 0);
         }
 
-        [Test, Ignore("Database tests have issues with authentication, SetUp, and TearDown")]
+        [Test]
         public void SaveRevisionGuidTest()
         {
             var repo = new SqlTransactionRepository(

@@ -5,22 +5,23 @@
     using System.Linq;
     using System.Reflection;
 
-    using Xunit;
+    using NUnit.Framework;
 
     using X12.Shared.Models;
 
+    [TestFixture]
     public class X12AcknowledgmentServiceTester
     {
-        [Fact]
+        [Test]
         public void Acknowledge837ITest()
         {
             var service = new InstitutionalClaimAcknowledgmentService();
             var responses = service.AcknowledgeTransactions(this.GetEdi("837I_4010_Batch1.txt"));
 
-            Assert.Single(responses);
+            Assert.AreEqual(1, responses.Count);
             var response = responses.First();
-            Assert.Equal("612200041", response.GroupControlNumber);
-            Assert.Equal(54, response.TransactionSetResponses.Count);
+            Assert.AreEqual("612200041", response.GroupControlNumber);
+            Assert.AreEqual(54, response.TransactionSetResponses.Count);
 
             var interchange = new Interchange(DateTime.Now, 1, true);
             var group = interchange.AddFunctionGroup("FA", DateTime.Now, 1);

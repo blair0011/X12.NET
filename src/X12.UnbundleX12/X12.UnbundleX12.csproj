@@ -4,8 +4,8 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <OutputType>Exe</OutputType>
     <AssemblyName>UnbundleX12</AssemblyName>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
-    <LangVersion>7.3</LangVersion>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>8.0</LangVersion>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
@@ -24,9 +24,6 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\X12.Parsing\X12.Parsing.csproj" />
     <ProjectReference Include="..\X12.Shared\X12.Shared.csproj" />

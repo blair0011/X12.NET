@@ -9,10 +9,11 @@
     
     using X12.Sql;
 
-    [TestFixture]
+    [TestFixture, Ignore("Database tests have issues with authentication, SetUp, and TearDown")]
     public class SqlReadOnlyTransactionRepoTester
     {
-        private const string Dsn = "Data Source=localhost;Initial Catalog={0};Integrated Security=True";
+        private const string Dsn = @"Server=(localdb)\MSSQLLocalDB;Integrated Security=true";
+            //"Data Source=localhost;Initial Catalog={0};Integrated Security=True";
         private const string TestDirectory = @"C:\X12Test";
 
         /// <summary>
@@ -79,7 +80,7 @@
         /// Tests that entities can be read from the database
         /// </summary>
         /// <remarks>Being ignored due to database population issue</remarks>
-        [Test, Ignore("Authentication and database SetUp/TearDown issues")]
+        [Test]
         public void GetEntity()
         {
             var repo = new SqlReadOnlyTransactionRepository(string.Format(Dsn, "Test"), typeof(Guid));
