@@ -31,7 +31,7 @@
                 return;
             }
 
-            var parser = new X12Parser();
+            var parser = new X12Parser(false);
             
             foreach (var filename in Directory.GetFiles(opts.InputDirectory, opts.FilenamePattern))
             {

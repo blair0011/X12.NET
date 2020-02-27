@@ -85,8 +85,10 @@
                 catch (Exception exc)
                 {
                     opts.WriteLine($"Exception occurred: {exc.GetType().FullName}.  {exc.Message}.  {exc.StackTrace}");
+                    opts.WriteLine(exc.InnerException.ToString());
                 }
             }
+            Console.ReadKey();
         }
     }
 }
