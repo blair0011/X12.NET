@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "X12GrpcService.Protos";
+
+service X12GrpcService{
+	rpc X12Parser (X12Request) returns (X12Response);
+}
+
+message X12Request{
+	string xmi = 1;
+}
+
+message X12Response{
+	string xml =1;
+}

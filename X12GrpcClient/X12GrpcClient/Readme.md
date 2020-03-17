@@ -1,0 +1,1 @@
+﻿This is a simple gRPC client I am using to test the gRPC service with. It will evolve with the changes to the Service project.
